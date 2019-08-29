@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/main_bk"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="#000"
-        android:textSize="20sp"
         android:layout_marginBottom="10dp"
-        android:text="Student Details" />
+        android:gravity="center"
+        android:text="Student Details"
+        android:textColor="#000"
+        android:textSize="20sp" />
+
     <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -24,23 +26,22 @@
         android:rowCount="3">
 
 
-
         <TextView
             android:id="@+id/tv_roll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Enter Roll no"
             android:textColor="#000"
-            android:textSize="15sp"
-            android:text="Enter Roll no" />
+            android:textSize="15sp" />
+
         <EditText
             android:id="@+id/et_roll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="123"
             android:gravity="center"
-            android:inputType="number"
-             />
+            android:hint="123"
+            android:inputType="number" />
 
 
         <TextView
@@ -49,8 +50,8 @@
             android:layout_height="wrap_content"
             android:text="Enter Name"
             android:textColor="#000"
-            android:textSize="15sp"
-            />
+            android:textSize="15sp" />
+
         <EditText
             android:id="@+id/et_name"
             android:layout_width="wrap_content"
@@ -58,32 +59,31 @@
             android:ems="10"
             android:gravity="center"
             android:hint="xyz"
-            android:inputType="textPersonName"
-            />
+            android:inputType="textPersonName" />
+
         <TextView
             android:id="@+id/tv_marks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Enter Marks"
             android:textColor="#000"
-            android:textSize="15sp"
-            android:text="Enter Marks" />
+            android:textSize="15sp" />
 
         <EditText
             android:id="@+id/et_marks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="number"
             android:gravity="center"
-            android:hint="Out of 100" />
+            android:hint="Out of 100"
+            android:inputType="number" />
     </GridLayout>
 
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        >
+        android:layout_marginTop="30dp">
 
 
         <TableRow
@@ -95,6 +95,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:focusable="true"
                 android:text="Add" />
 
             <Button
@@ -102,6 +103,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:focusable="true"
                 android:text="Delete" />
 
             <Button
@@ -109,6 +111,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:focusable="true"
                 android:text="Modify" />
         </TableRow>
 
@@ -121,6 +124,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:focusable="true"
                 android:text="View" />
 
             <Button
@@ -128,6 +132,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:focusable="true"
                 android:text="View All" />
 
             <Button
@@ -135,9 +140,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:focusable="true"
                 android:text="Show" />
         </TableRow>
-
 
 
         <Button
@@ -145,6 +150,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            android:focusable="true"
             android:text="Delete all" />
 
     </TableLayout>
