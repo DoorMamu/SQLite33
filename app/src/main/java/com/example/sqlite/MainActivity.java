@@ -1,13 +1,19 @@
 package com.example.sqlite;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,9 +27,11 @@ import java.util.Locale;
  */
 public class MainActivity extends AppCompatActivity implements Button.OnClickListener {
 EditText ma_et_name,ma_et_roll,ma_et_marks;
-Button ma_btn_add,ma_btn_del,ma_btn_mod,ma_btn_vi,ma_btn_viall,ma_btn_show,ma_btn_delall;
+Button ma_btn_add,ma_btn_del,ma_btn_mod,ma_btn_vi,ma_btn_viall,ma_btn_show,ma_btn_delall,ma_clrall;
 SQLiteDatabase db;
-//***********Step1*************************
+
+
+    //***********Step1*************************
 //Prepare  initialization and listener,and create db and table if not exist
     public void init()
     {
@@ -37,6 +45,7 @@ SQLiteDatabase db;
         ma_btn_viall=findViewById(R.id.btn_view_all);
         ma_btn_show=findViewById(R.id.btn_show);
         ma_btn_delall=findViewById(R.id.btn_del_all);
+        ma_clrall=findViewById(R.id.btn_clr);
 
         ma_btn_add.setOnClickListener(this);
         ma_btn_del.setOnClickListener(this);
@@ -45,6 +54,7 @@ SQLiteDatabase db;
         ma_btn_viall.setOnClickListener(this);
         ma_btn_show.setOnClickListener(this);
         ma_btn_delall.setOnClickListener(this);
+        ma_clrall.setOnClickListener(this);
         //*****************Step 2********************
         db=openOrCreateDatabase("StudendDB", Context.MODE_PRIVATE,null);
         db.execSQL("CREATE TABLE IF NOT EXISTS student(rollno VARCHAR,name VARCHAR,marks VARCHAR);");
@@ -245,6 +255,43 @@ SQLiteDatabase db;
             case R.id.btn_del_all:
                 delAll();
                 break;
+            case R.id.btn_clr:
+                clearEditText();
+                break;
         }
+    }
+
+    //**************Step 5*****************************
+    //create menu ops
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId())
+        {
+            case R.id.me_set:
+                startActivity(new Intent(Settings.ACTION_SETTINGS));
+                //        startActivity(new Intent(MainActivity.this,Setting.class));
+                break;
+            case R.id.me_wait:
+        //        startActivity(new Intent(MainActivity.this,Waiting.class));
+                AlertDialog.Builder bldr=new AlertDialog.Builder(this);
+                bldr.setIcon(R.mipmap.ic_launcher_round);
+                bldr.setTitle("Waiting");
+                bldr.setMessage("Keep Waiting");
+                bldr.setCancelable(true);
+                bldr.show();
+                    break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return super.onOptionsItemSelected(item);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu myMenu) {
+
+        MenuInflater inflater=getMenuInflater();
+        inflater.inflate(R.menu.menu,myMenu);
+        return true;
     }
 }
