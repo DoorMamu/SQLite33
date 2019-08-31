@@ -96,6 +96,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:focusable="true"
+                android:textColor="#fff"
+                android:background="#5B5A5C"
                 android:text="Add" />
 
             <Button
@@ -103,7 +105,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:textColor="#fff"
                 android:focusable="true"
+                android:background="#5B5A5C"
                 android:text="Delete" />
 
             <Button
@@ -111,7 +115,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:textColor="#fff"
                 android:focusable="true"
+                android:background="#5B5A5C"
                 android:text="Modify" />
         </TableRow>
 
@@ -124,7 +130,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:textColor="#fff"
                 android:focusable="true"
+                android:background="#5B5A5C"
                 android:text="View" />
 
             <Button
@@ -132,7 +140,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
+                android:textColor="#fff"
                 android:focusable="true"
+                android:background="#5B5A5C"
                 android:text="View All" />
 
             <Button
@@ -141,6 +151,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:focusable="true"
+                android:textColor="#fff"
+                android:background="#5B5A5C"
                 android:text="Show" />
         </TableRow>
 
@@ -151,7 +163,19 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:focusable="true"
+            android:textColor="#fff"
+            android:background="#5B5A5C"
             android:text="Delete all" />
+        <Button
+            android:id="@+id/btn_clr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:focusable="true"
+            android:textColor="#fff"
+            android:background="#5B5A5C"
+            android:text="Clear all" />
+
 
     </TableLayout>
 
